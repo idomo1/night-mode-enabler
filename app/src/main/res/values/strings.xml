@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Night Mode Enabler</string>
+    <string name="toggle_theme_label">Night mode</string>
+    <string name="enable_night_mode_cd">Enable night mode</string>
+    <string name="disable_night_mode_cd">Disable night mode</string>
+    <string name="set_night_mode">Night</string>
+    <string name="set_day_mode">Day</string>
+    <string name="set_auto_mode">Auto</string>
+</resources>
