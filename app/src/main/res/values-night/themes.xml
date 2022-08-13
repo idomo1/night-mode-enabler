@@ -14,6 +14,8 @@
 
         <item name="rippleColor">@color/lightGrey</item>
 
+        <item name="colorControlNormal">@color/white</item>
+
         <!-- Status and navigation bar colours. -->
         <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
         <item name="android:navigationBarColor" tools:targetApi="l">
