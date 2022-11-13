@@ -11,6 +11,7 @@ This app also adds a quick settings tile to toggle night mode from anywhere. Thi
 The app is available on [Google Play](https://play.google.com/store/apps/details?id=com.damien.nightmodeenabler).
 
 Makes use of Data Binding and Material Theming.
+Checkout the [compose branch](https://github.com/idomo1/night-mode-enabler/tree/compose) to see this app rewritten using Jetpack Compose.
 
 ## Dependencies
 * AndroidX
