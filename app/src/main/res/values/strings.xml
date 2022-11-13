@@ -7,4 +7,5 @@
     <string name="set_day_mode">Day</string>
     <string name="set_auto_mode">Auto</string>
     <string name="privacy_policy_label">Privacy Policy</string>
+    <string name="overflow_menu_content_description">More options</string>
 </resources>

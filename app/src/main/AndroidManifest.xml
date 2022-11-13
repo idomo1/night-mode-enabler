@@ -10,6 +10,7 @@
         android:theme="@style/Theme.NightModeEnabler">
         <activity
             android:name="com.damien.nightmodeenabler.MainActivity"
+            android:theme="@style/Theme.NightModeEnabler"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

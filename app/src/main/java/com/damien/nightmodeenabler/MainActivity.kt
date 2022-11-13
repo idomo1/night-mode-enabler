@@ -5,18 +5,12 @@ import android.app.UiModeManager
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.ViewGroup
+import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updateLayoutParams
-import androidx.databinding.DataBindingUtil
-import com.damien.nightmodeenabler.bottomsheet.SetThemeBottomDialogFragment
-import com.damien.nightmodeenabler.databinding.ActivityMainBinding
+import com.damien.nightmodeenabler.components.App
+import com.google.android.material.composethemeadapter3.Mdc3Theme
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,43 +25,12 @@ class MainActivity : AppCompatActivity() {
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        val binding: ActivityMainBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.viewModel = viewModel
-
-        val setThemeBottomSheet = SetThemeBottomDialogFragment()
-        binding.toggleNightModeButton.setOnLongClickListener {
-            setThemeBottomSheet.show(supportFragmentManager, SetThemeBottomDialogFragment.TAG)
-            true
-        }
-
-        binding.toobar.title = ""
-        setSupportActionBar(binding.toobar)
-
-        // Ensure that toolbar is not overlapping status bar.
-        ViewCompat.setOnApplyWindowInsetsListener(binding.toobar) { view, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                topMargin = insets.top
-                leftMargin = insets.left
-                rightMargin = insets.right
+        setContent {
+            Mdc3Theme {
+                App(viewModel) {
+                    launchUrl(BuildConfig.PRIVACY_POLICY_URL)
+                }
             }
-
-            WindowInsetsCompat.CONSUMED
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (item.itemId == R.id.privacy_policy) {
-            launchUrl(BuildConfig.PRIVACY_POLICY_URL)
-            true
-        } else {
-            super.onOptionsItemSelected(item)
         }
     }
 

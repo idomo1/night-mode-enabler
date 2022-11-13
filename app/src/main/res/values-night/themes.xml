@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.NightModeEnabler" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.NightModeEnabler" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/nightBlue</item>
         <item name="colorPrimaryVariant">@color/nightBlue</item>
@@ -14,7 +14,7 @@
 
         <item name="rippleColor">@color/lightGrey</item>
 
-        <item name="colorControlNormal">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/white</item>
 
         <!-- Status and navigation bar colours. -->
         <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
